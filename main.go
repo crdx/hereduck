@@ -11,6 +11,10 @@ func getMinIndentationLevel(lines []string) int {
 	min := math.MaxInt32
 
 	for i, line := range lines {
+		if len(line) == 0 {
+			continue
+		}
+
 		current := 0
 
 		// Calculate the number of whitespace characters leading this

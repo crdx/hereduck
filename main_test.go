@@ -25,6 +25,14 @@ func TestD(t *testing.T) {
 	`)
 	assert.Equal(t, doc, "Hello\nworld\n")
 
+	// Multiline, with a blank line (tabs)
+	doc = D(`
+					Hello
+
+					world
+	`)
+	assert.Equal(t, doc, "Hello\n\nworld\n")
+
 	// Multiline, variable indent (tabs and spaces)
 	doc = D(`
 					Hello
