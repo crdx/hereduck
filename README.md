@@ -1,6 +1,6 @@
 # hereduck
 
-A heredoc library for Go.
+**hereduck** is a heredoc library for Go.
 
 ## Usage
 
