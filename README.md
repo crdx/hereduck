@@ -25,3 +25,11 @@ Hello
 The minimum indentation level shared by all lines is stripped out, but subsequent indentation is preserved.
 
 There is also `hereduck.Df` which follows the standard formatting string pattern.
+
+## Contributions
+
+Open an [issue](https://github.com/crdx/hereduck/issues) or send a [pull request](https://github.com/crdx/hereduck/pulls).
+
+## Licence
+
+[MIT](LICENCE.md).
