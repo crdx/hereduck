@@ -17,8 +17,7 @@ func getMinIndentationLevel(lines []string) int {
 
 		current := 0
 
-		// Calculate the number of whitespace characters leading this
-		// line.
+		// Calculate the number of whitespace characters leading this line.
 		for _, rune := range line {
 			if unicode.IsSpace(rune) {
 				current++
@@ -27,8 +26,8 @@ func getMinIndentationLevel(lines []string) int {
 			}
 		}
 
-		// If this is the last line and it's only whitespace, skip it.
-		// No point in counting it as it will be removed later on.
+		// If this is the last line and it's only whitespace, skip it. No point in counting it as it
+		// will be removed later on.
 		if len(line) == current && i == len(lines)-1 {
 			continue
 		}
@@ -63,9 +62,9 @@ func D(str string) string {
 	lines := strings.Split(str, "\n")
 	min := getMinIndentationLevel(lines)
 
-	// If the length of the last line is smaller or equal to the minimum
-	// indentation level then remove the indentation completely. This
-	// preserves the trailing newline without the excess whitespace.
+	// If the length of the last line is smaller or equal to the minimum indentation level then
+	// remove the indentation completely. This preserves the trailing newline without the excess
+	// whitespace.
 	if len(lines[len(lines)-1]) <= min {
 		lines[len(lines)-1] = ""
 	}
