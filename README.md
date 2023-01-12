@@ -2,6 +2,12 @@
 
 **hereduck** is a heredoc library for Go.
 
+## Installation
+
+```sh
+go get github.com/crdx/hereduck
+```
+
 ## Usage
 
 ```go
