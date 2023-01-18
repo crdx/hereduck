@@ -3,4 +3,4 @@
 
 # run tests
 @test *args:
-    cd src && go test -cover ./... {{ args }}
+    go test -cover ./... {{ args }}
