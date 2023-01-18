@@ -1,5 +1,5 @@
-module github.com/crdx/hereduck
+module crdx.org/hereduck
 
 go 1.16
 
-require github.com/crdx/assert v1.0.0
+require crdx.org/assert v1.0.2

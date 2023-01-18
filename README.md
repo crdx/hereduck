@@ -5,13 +5,13 @@
 ## Installation
 
 ```sh
-go get github.com/crdx/hereduck
+go get crdx.org/hereduck
 ```
 
 ## Usage
 
 ```go
-import "github.com/crdx/hereduck"
+import "crdx.org/hereduck"
 
 func main() {
     doc = hereduck.D(`

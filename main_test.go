@@ -1,7 +1,7 @@
 package hereduck
 
 import (
-	"github.com/crdx/assert"
+	"crdx.org/assert"
 	"testing"
 )
 
