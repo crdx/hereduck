@@ -1,8 +1,9 @@
 package hereduck
 
 import (
-	"crdx.org/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestD(t *testing.T) {
