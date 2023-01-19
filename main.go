@@ -7,6 +7,34 @@ import (
 	"unicode"
 )
 
+// D strips leading indentation from a string. The minimum indentation level shared by all lines
+// is removed, but any subsequent indentation is preserved.
+func D(str string) string {
+	if len(str) > 0 && str[0] == '\n' {
+		str = str[1:]
+	}
+
+	lines := strings.Split(str, "\n")
+	min := getMinIndentationLevel(lines)
+
+	// If the length of the last line is smaller or equal to the minimum indentation level then
+	// remove the indentation completely. This preserves the trailing newline without the excess
+	// whitespace.
+	if len(lines[len(lines)-1]) <= min {
+		lines[len(lines)-1] = ""
+	}
+
+	lines = removeIndentation(lines, min)
+	return strings.Join(lines, "\n")
+}
+
+// Df is like [D] but also follows the standard formatting string pattern.
+func Df(format string, a ...interface{}) string {
+	return fmt.Sprintf(D(format), a...)
+}
+
+// —————————————————————————————————————————————————————————————————————————————————————————————————
+
 func getMinIndentationLevel(lines []string) int {
 	min := math.MaxInt32
 
@@ -48,27 +76,4 @@ func removeIndentation(lines []string, n int) []string {
 	}
 
 	return lines
-}
-
-func Df(format string, a ...interface{}) string {
-	return fmt.Sprintf(D(format), a...)
-}
-
-func D(str string) string {
-	if len(str) > 0 && str[0] == '\n' {
-		str = str[1:]
-	}
-
-	lines := strings.Split(str, "\n")
-	min := getMinIndentationLevel(lines)
-
-	// If the length of the last line is smaller or equal to the minimum indentation level then
-	// remove the indentation completely. This preserves the trailing newline without the excess
-	// whitespace.
-	if len(lines[len(lines)-1]) <= min {
-		lines[len(lines)-1] = ""
-	}
-
-	lines = removeIndentation(lines, min)
-	return strings.Join(lines, "\n")
 }
