@@ -56,9 +56,7 @@ func TestD(t *testing.T) {
 }
 
 func TestDf(t *testing.T) {
-	var doc string
-
-	doc = Df(`
+	doc := Df(`
 		Hello %s
 	`, "world")
 	assert.Equal(t, "Hello world\n", doc)
