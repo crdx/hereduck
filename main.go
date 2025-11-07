@@ -29,7 +29,7 @@ func D(str string) string {
 }
 
 // Df is like [D] but also follows the standard formatting string pattern.
-func Df(format string, a ...interface{}) string {
+func Df(format string, a ...any) string {
 	return fmt.Sprintf(D(format), a...)
 }
 
